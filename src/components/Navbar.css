@@ -1,0 +1,100 @@
+.nav-link-custom {
+  position: relative;
+  padding: 8px 12px;
+  color: #ffffff !important;
+}
+
+/* underline caché */
+.nav-link-custom::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 2px;
+  width: 0%;
+  height: 2px;
+  background-color: #0d6efd;
+  transition: width 0.3s ease;
+}
+
+/* hover */
+.nav-link-custom:hover::after {
+  width: 100%;
+}
+
+/* lien actif */
+.nav-link-custom.active::after {
+  width: 100%;
+}
+
+.nav-icon {
+  margin-right: 8px; /* ESPACEMENT ICI */
+  font-size: 1rem;
+  vertical-align: middle;
+}
+
+/* dropdown title style */
+.navbar .dropdown-toggle {
+  color: #fff !important;
+  display: flex;
+  align-items: center;
+}
+
+/* enlever la flèche bootstrap */
+.navbar .dropdown-toggle::after {
+  display: none;
+}
+
+/* underline sur hover menu parent */
+.navbar .dropdown:hover .nav-link-custom::after {
+  width: 100%;
+}
+
+/* menu déroulant */
+.dropdown-menu {
+  border-radius: 8px;
+}
+.dropdown-menu a:hover{
+  background: #0d6efd;
+  color: #ffffff;
+}
+
+/* ===========================
+   DROPDOWN HOVER DESKTOP
+   =========================== */
+@media (min-width: 992px) {
+  .navbar .dropdown:hover > .dropdown-menu {
+    display: block;
+  }
+
+  .navbar .dropdown:hover > .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .navbar .dropdown-toggle::after {
+    display: none;
+  }
+}
+
+/* ===========================
+   DROPDOWN MOBILE (CLIC)
+   =========================== */
+@media (max-width: 991px) {
+  .navbar .dropdown-menu {
+    position: static;
+    float: none;
+  }
+}
+
+/* animation fluide */
+.dropdown-menu {
+  margin-top: 0;
+  transition: all 0.2s ease;
+}
+
+.navbar-brand img {
+  object-fit: contain;
+}
+
+
+
